@@ -7,7 +7,7 @@
 
 **智简魔方 (IDCsmart) 全能 OAuth 登录插件，一键集成 10+ 主流身份认证平台，为您的 IDCsmart 系统提供现代化、安全、便捷的登录解决方案。**
 
-![登录界面预览](https://via.placeholder.com/1280x600.png?text=OAuth+Login+Interface+Preview)
+![登录界面预览](/login.png)
 *(请将上方链接替换为实际的插件登录界面截图)*
 
 ---
@@ -43,16 +43,16 @@
 
 ## 🌐 支持平台
 
-| 平台                                                       | 状态      | 申请API               |
-| :--------------------------------------------------------- | :-------- | :--------------------- |
-| ![Apple](https://img.shields.io/badge/Apple-000000?logo=apple)  | ✅ 稳定   | [配置](#apple-配置)    |
-| ![GitHub](https://img.shields.io/badge/GitHub-181717?logo=github)  | ✅ 稳定   | [配置](#github-配置)   |
-| ![Google](https://img.shields.io/badge/Google-4285F4?logo=google)  | ✅ 稳定   | [配置](#google-配置)   |
-| ![GitLab](https://img.shields.io/badge/GitLab-FCA121?logo=gitlab)  | ✅ 稳定   | [配置](#gitlab-配置)   |
-| ![Authing](https://img.shields.io/badge/Authing-1E6CFF?logo=auth0)  | ✅ 稳定   | [配置](#authing-配置)  |
-| ![MetaMask](https://img.shields.io/badge/MetaMask-F6851B?logo=metamask)  | 🚧 开发中 | [配置](#metamask-配置) |
-| ![Slack](https://img.shields.io/badge/Slack-4A154B?logo=slack)  | ✅ 稳定   | [配置](#slack-配置)    |
-| ![Atlassian](https://img.shields.io/badge/Atlassian-0052CC?logo=atlassian)  | ✅ 稳定   | [配置](#atlassian-配置)|
+| 平台                                                       | 状态      | 申请API               | 插件名称|
+| :--------------------------------------------------------- | :-------- | :--------------------- |---------------------|
+| ![Apple](https://img.shields.io/badge/Apple-000000?logo=apple)  | ✅ 稳定   | [配置](#apple-配置)    |appleoauth|
+| ![GitHub](https://img.shields.io/badge/GitHub-181717?logo=github)  | ✅ 稳定   | [配置](#github-配置)   |githuboauth|
+| ![Google](https://img.shields.io/badge/Google-4285F4?logo=google)  | ✅ 稳定   | [配置](#google-配置)   |googleoauth|
+| ![GitLab](https://img.shields.io/badge/GitLab-FCA121?logo=gitlab)  | ✅ 稳定   | [配置](#gitlab-配置)   |gitlaboauth/gitlabcnoauth|
+| ![Authing](https://img.shields.io/badge/Authing-1E6CFF?logo=auth0)  | ✅ 稳定   | [配置](#authing-配置)  |authingoauth|
+| ![MetaMask](https://img.shields.io/badge/MetaMask-F6851B?logo=metamask)  | 🚧 开发中 | [配置](#metamask-配置) |metamaskoauth|
+| ![Slack](https://img.shields.io/badge/Slack-4A154B?logo=slack)  | ✅ 稳定   | [配置](#slack-配置)    |slackoauth|
+| ![Atlassian](https://img.shields.io/badge/Atlassian-0052CC?logo=atlassian)  | ✅ 稳定   | [配置](#atlassian-配置)|atlassianoauth|
 
 *(✅ 稳定 | 🚧 开发中 | ❌ 暂不支持)*
 
@@ -93,7 +93,7 @@
     *   进入 [GitHub Developer Settings](https://github.com/settings/developers) -> OAuth Apps -> New OAuth App
     *   **Application name**: (例如: My IDCsmart Login)
     *   **Homepage URL**: `https://yourdomain.com`
-    *   **Authorization callback URL**: `https://yourdomain.com/index.php?m=oauth&c=callback&plugin=githuboauth` (请确认此回调路径是否与您的 IDCsmart 路由匹配)
+    *   **Authorization callback URL**: `yourdomain.com/oauth/url/插件名称` (请确认此回调路径是否与您的 IDCsmart 路由匹配)
 2.  **获取 Client ID 和 Client Secret**。
 3.  **后台配置**: 在 IDCsmart 后台对应的插件配置中填入 Client ID 和 Client Secret。
 
@@ -103,7 +103,7 @@
     *   进入 [Google Cloud Console](https://console.cloud.google.com/) -> APIs & Services -> Credentials -> Create Credentials -> OAuth client ID
     *   **Application type**: Web application
     *   **Authorized JavaScript origins**: `https://yourdomain.com`
-    *   **Authorized redirect URIs**: `https://yourdomain.com/index.php?m=oauth&c=callback&plugin=googleoauth` (请确认此回调路径)
+    *   **Authorized redirect URIs**: `yourdomain.com/oauth/url/插件名称` (请确认此回调路径)
 2.  **启用 Google People API**: 在 Google Cloud Console 中确保 People API 已启用。
 3.  **获取 Client ID 和 Client Secret**。
 4.  **后台配置**: 在 IDCsmart 后台对应的插件配置中填入 Client ID 和 Client Secret。
@@ -113,7 +113,7 @@
 1.  **创建应用**:
     *   登录您的 GitLab 实例 -> User Settings -> Applications -> Add new application
     *   **Name**: (例如: IDCsmart Login)
-    *   **Redirect URI**: `https://yourdomain.com/index.php?m=oauth&c=callback&plugin=gitlaboauth` (请确认此回调路径)
+    *   **Redirect URI**: `yourdomain.com/oauth/url/插件名称` (请确认此回调路径)
     *   **Scopes**: 勾选 `read_user`, `openid`, `email` 权限。
 2.  **获取 Application ID 和 Secret**。
 3.  **后台配置**: 在 IDCsmart 后台对应的插件配置中填入 Application ID 和 Secret。
@@ -123,7 +123,7 @@
 1.  **创建应用**:
     *   进入 [Authing 控制台](https://console.authing.cn/) -> 应用 -> 创建自建应用
     *   **应用类型**: 选择 Web 应用
-    *   **配置登录回调 URL**: `https://yourdomain.com/index.php?m=oauth&c=callback&plugin=authingoauth` (请确认此回调路径)
+    *   **配置登录回调 URL**: `yourdomain.com/oauth/url/插件名称` (请确认此回调路径)
 2.  **记录 App ID、App Secret 和 Issuer URL** (可在应用详情页找到)。
 3.  **后台配置**: 在 IDCsmart 后台对应的插件配置中填入 App ID, App Secret, 和 Issuer URL。
 
@@ -152,7 +152,7 @@ MetaMask 登录不依赖传统的 OAuth Client ID/Secret，而是基于数字签
     *   进入 [Slack API](https://api.slack.com/apps) -> Create New App -> From scratch
     *   **App Name**: (例如: IDCsmart Login)
     *   **Development Slack Workspace**: 选择您的工作区
-    *   导航到 OAuth & Permissions -> **Redirect URLs**: 添加 `https://yourdomain.com/index.php?m=oauth&c=callback&plugin=slackoauth` (请确认此回调路径)
+    *   导航到 OAuth & Permissions -> **Redirect URLs**: 添加 `yourdomain.com/oauth/url/插件名称` (请确认此回调路径)
     *   **Scopes** -> User Token Scopes: 添加 `identity.basic`, `identity.email`。
 2.  **获取 Client ID 和 Client Secret** (在 Basic Information 页面)。
 3.  **后台配置**: 在 IDCsmart 后台对应的插件配置中填入 Client ID 和 Client Secret。
@@ -162,14 +162,14 @@ MetaMask 登录不依赖传统的 OAuth Client ID/Secret，而是基于数字签
 1.  **创建OAuth应用**:
     *   进入 [Atlassian Developer Console](https://developer.atlassian.com/console/myapps/) -> Create -> OAuth 2.0 integration
     *   **Name**: (例如: IDCsmart Login)
-    *   **Callback URL**: `https://yourdomain.com/index.php?m=oauth&c=callback&plugin=atlassianoauth` (请确认此回调路径)
+    *   **Callback URL**: `yourdomain.com/oauth/url/插件名称` (请确认此回调路径)
     *   **Permissions**: 添加 `read:jira-user`, `offline_access`, `read:me` (根据需要调整)。
 2.  **获取 Client ID 和 Secret** (在 Settings 页面)。
 3.  **后台配置**: 在 IDCsmart 后台对应的插件配置中填入 Client ID 和 Secret。
 
 ### 💡 验证清单
 
-*   [ ] 所有回调 URL 中的 `yourdomain.com` 已替换为您的实际域名。
+*   [ ] 所有回调 URL 中的 `yourdomain.com/oauth/url/插件名称` 已替换为您的实际域名。
 *   [ ] 您的 IDCsmart 站点已部署并强制启用 HTTPS。
 *   [ ] 敏感信息（Client Secrets 等）已安全配置在 IDCsmart 后台，避免硬编码。
 *   [ ] 各平台申请 API 时所选的权限 (Scopes) 与插件要求一致。
@@ -177,9 +177,6 @@ MetaMask 登录不依赖传统的 OAuth Client ID/Secret，而是基于数字签
 
 ---
 
-## 🚀 使用示例
-
-*(待补充：可以添加截图或简要说明用户如何在登录页面看到并使用这些 OAuth 选项)*
 
 ---
 
@@ -191,12 +188,7 @@ MetaMask 登录不依赖传统的 OAuth Client ID/Secret，而是基于数字签
 *   **HTTPS 问题**: 大部分 OAuth 提供商强制要求回调 URL 使用 HTTPS。
 *   **服务器时间不同步**: 服务器时间若与标准时间相差过大，可能导致某些基于时间的验证失败。
 *   **防火墙/网络问题**: 确保您的服务器可以访问第三方平台的 API 端点。
-*   **MetaMask 签名验证失败**:
-    *   检查签名消息是否与前端发送的一致（包括前缀和 Nonce）。
-    *   确保后端使用的签名验证库正确且配置无误。
-    *   确认 Nonce 是否正确传递和匹配。
 
-*(待补充更多具体问题和解决方案)*
 
 ---
 
@@ -204,17 +196,13 @@ MetaMask 登录不依赖传统的 OAuth Client ID/Secret，而是基于数字签
 
 欢迎开发者为 ZJmfOAuth 贡献代码、报告 Bug 或提出新功能建议！
 
-1.  Fork 本仓库。
-2.  创建新的 Feature 分支 (`git checkout -b feature/AmazingFeature`)。
-3.  提交您的更改 (`git commit -m 'Add some AmazingFeature'`)。
-4.  推送 Feature 分支 (`git push origin feature/AmazingFeature`)。
-5.  创建 Pull Request。
+1.  QQ:maishankj 联系
 
 ---
 
 ## 🛡️ 安全声明
 
-*   我们强烈建议您将 Client Secrets 等敏感信息存储在安全的环境变量或 IDCsmart 的加密配置中，而不是直接硬编码在代码里。
+*   我们强烈建议您使用正版来源的程序,盗版或者破解可能存在安全问题。
 *   定期审查并更新您在各 OAuth 平台上的应用设置和权限。
 *   保持插件和 IDCsmart 系统为最新版本，以获取安全更新。
 
@@ -222,11 +210,11 @@ MetaMask 登录不依赖传统的 OAuth Client ID/Secret，而是基于数字签
 
 ## 📄 许可证
 
-本项目采用 [MIT License](LICENSE) 授权。
+本项目采用 [MIT许可证](LICENSE) 授权。
 
 ---
 
 ## 📞 支持与联系
 
 *   **Bug 报告 / 功能请求**: 请通过 GitHub Issues 提交。
-*   **联系作者**: [Maishan Inc](https://github.com/maishaninc) (请替换为您的联系方式或 GitHub 链接)
+*   **联系我们**: [Maishan Inc](support@maishanzero.com)  MaishanInc和杭州零迈科技 不存在与 重庆顺戴网络科技有限公司[IDCsmart开发商] 联系 
