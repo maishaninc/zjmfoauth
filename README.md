@@ -86,7 +86,7 @@
 **注意:** 以下回调 URL 中的 `https://yourdomain.com` 需要替换为您 IDCsmart 系统的实际访问域名。确保您的站点已启用 HTTPS。
 
 ### Apple 配置
-.  **创建OAuth应用**:
+1.  **创建OAuth应用**:
     *   **进入[Apple开发者后台](https://developer.apple.com/)**   路径：Certificates, Identifiers & Profiles → Identifiers → [+](https://developer.apple.com/)  
     *   **Application name**: (例如: My IDCsmart Login)
     *   **Homepage URL**: `https://yourdomain.com`
