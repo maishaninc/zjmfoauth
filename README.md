@@ -145,7 +145,7 @@ MetaMask 登录不依赖传统的 OAuth Client ID/Secret，而是基于数字签
     *   前端调用 MetaMask (`ethereum.request({ method: 'personal_sign', ... })`) 请求用户对该消息进行签名。
     *   前端将用户的钱包地址 (`address`)、签名 (`signature`) 和使用的 `nonce` 发送到后端回调 URL。
 2.  **后端验证**:
-    *   后端回调接口 (`/index.php?m=oauth&c=callback&plugin=metamaskoauth`) 接收 `address`, `signature`, `nonce`。
+    *   后端回调接口 (`yourdomain.com/oauth/url/插件名称`) 接收 `address`, `signature`, `nonce`。
     *   后端从 Session 或其他安全存储中获取之前为该用户生成的 `nonce`。
     *   后端验证收到的 `nonce` 与存储的 `nonce` 是否匹配。
     *   后端使用密码学库验证 `signature` 是否是由 `address` 对 `登录消息前缀 + nonce` 进行的有效签名。
@@ -180,7 +180,7 @@ MetaMask 登录不依赖传统的 OAuth Client ID/Secret，而是基于数字签
 *   [ ] 您的 IDCsmart 站点已部署并强制启用 HTTPS。
 *   [ ] 敏感信息（Client Secrets 等）已安全配置在 IDCsmart 后台，避免硬编码。
 *   [ ] 各平台申请 API 时所选的权限 (Scopes) 与插件要求一致。
-*   [ ] 确认 IDCsmart 系统中的回调 URL 路径 (`/index.php?m=oauth&c=callback&plugin=插件名`) 是否正确。
+*   [ ] 确认 IDCsmart 系统中的回调 URL 路径 (`yourdomain.com/oauth/url/插件名称`) 是否正确。
 
 ---
 
