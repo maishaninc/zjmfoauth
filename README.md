@@ -1,4 +1,6 @@
-# ZJmfOAuth 🔐 - 全能 OAuth 登录插件 for IDCsmart
+# ZJmfOAuth/智点-魔方财务 🔐 - 全能 OAuth 登录插件 for IDCsmart  MaishanInc © 2025 智点™
+
+# 金牌赞助商  [泰坦云服务器](https://titancloud.click/)
 
 [![MIT License](https://img.shields.io/badge/license-MIT-brightgreen)](LICENSE)
 [![PHP 7.4+](https://img.shields.io/badge/PHP-7.4%2B-8892BF.svg)](https://php.net/)
@@ -8,7 +10,6 @@
 **智简魔方 (IDCsmart) 全能 OAuth 登录插件，一键集成 10+ 主流身份认证平台，为您的 IDCsmart 系统提供现代化、安全、便捷的登录解决方案。**
 
 ![登录界面预览](/login.png)
-*(请将上方链接替换为实际的插件登录界面截图)*
 
 ---
 
