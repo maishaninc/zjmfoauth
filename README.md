@@ -92,8 +92,8 @@
     *   **Homepage URL**: `https://yourdomain.com`
     *   **Authorization callback URL**: `yourdomain.com/oauth/url/插件名称` (请确认此回调路径是否与您的 IDCsmart 路由匹配)
 2.  **获取 Client ID 和 Client Secret**。
-3.  **后台配置**: 在 IDCsmart 后台对应的插件配置中填入 Client ID 和 Client Secret。`
-     - 
+3.  **后台配置**: 在 IDCsmart 后台对应的插件配置中填入 Client ID 和 Client Secret。
+
 ### GitHub 配置
 
 1.  **创建OAuth应用**:
