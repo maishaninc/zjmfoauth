@@ -69,9 +69,9 @@
 ### 安装步骤
 
 1.  下载本项目 `https://github.com/maishaninc/zjmfoauth/archive/refs/heads/main.zip` (请替换为实际插件的下载链接或说明)
-2.  将解压后的插件文件夹（例如 `metamaskoauth`）上传到您的 IDCsmart 安装目录下的 `modules/oauth/` 目录。
+2.  将解压后的插件文件夹（例如 `google`）上传到您的 IDCsmart 安装目录下的 `/public/plugins/oauth/googleoauth` 目录。
     ```
-    网站根目录/modules/oauth/插件名称
+    网站根目录/public/plugins/oauth/插件名称
     ```
 3.  登录您的 IDCsmart 后台。
 4.  导航至 `设置` -> `模块管理` -> `接口/插件` -> `登录接口`。
