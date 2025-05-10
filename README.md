@@ -1,6 +1,6 @@
 # ZJmfOAuth/智点-魔方财务 🔐 - 全能 OAuth 登录插件 for IDCsmart  MaishanInc © 2025 智点™
 
-# 金牌赞助商  [泰坦云服务器](https://titancloud.click/)
+#
 
 [![MIT License](https://img.shields.io/badge/license-MIT-brightgreen)](LICENSE)
 [![PHP 7.4+](https://img.shields.io/badge/PHP-7.4%2B-8892BF.svg)](https://php.net/)
