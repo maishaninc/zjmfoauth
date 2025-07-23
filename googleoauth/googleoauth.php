@@ -18,7 +18,7 @@ class googleoauth
         return [
             'name'        => 'Google登录',
             'description' => '使用 Google 账号登录',
-            'author'      => 'Your Name',
+            'author'      => 'Maoshan Inc',
             'logo_url'    => 'google.svg', // Placeholder, ensure this file exists or update path
             'version'     => '1.0.0',
         ];
