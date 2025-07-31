@@ -1,4 +1,4 @@
-# ZJmfOAuth/智点-魔方财务 🔐 - 全能 OAuth 登录插件 for IDCsmart  MaishanInc © 2025 智点™
+# ZJmfOAuth/智点-魔方财务 🔐 - 全能 OAuth 登录插件 for IDCsmart  MaishanInc © 2025 智点™ 最近更新2025年7月31日
 
 #
 
@@ -31,6 +31,7 @@
     *   [GitLab](#gitlab-配置)
     *   [Authing](#authing-配置)
     *   [MetaMask](#metamask-配置)
+    *   [Microsoft](#microsoft-配置)
     *   [Slack](#slack-配置)
     *   [Atlassian](#atlassian-配置)
 4.  [使用示例](#-使用示例)
@@ -53,6 +54,7 @@
 | ![Authing](https://img.shields.io/badge/Authing-1E6CFF?logo=auth0)  | ✅ 稳定   | [配置](#authing-配置)  |authingoauth|
 | ![MetaMask](https://img.shields.io/badge/MetaMask-F6851B?logo=metamask)  | 🚧 开发中 | [配置](#metamask-配置) |metamaskoauth|
 | ![Slack](https://img.shields.io/badge/Slack-4A154B?logo=slack)  | ✅ 稳定   | [配置](#slack-配置)    |slackoauth|
+| ![Microsoft](https://img.shields.io/badge/Microsoft-0078D4?logo=microsoft)  | ✅ 稳定   | [配置](#microsoft-配置)|microsoftoauth|
 | ![Atlassian](https://img.shields.io/badge/Atlassian-0052CC?logo=atlassian)  | ✅ 稳定   | [配置](#atlassian-配置)|atlassianoauth|
 
 *(✅ 稳定 | 🚧 开发中 | ❌ 暂不支持)*
@@ -164,6 +166,23 @@ MetaMask 登录不依赖传统的 OAuth Client ID/Secret，而是基于数字签
 2.  **获取 Client ID 和 Client Secret** (在 Basic Information 页面)。
 3.  **后台配置**: 在 IDCsmart 后台对应的插件配置中填入 Client ID 和 Client Secret。
 
+### Microsoft 配置
+
+1.  **创建应用**:
+    *   进入 [Microsoft Azure Portal](https://portal.azure.com/) -> Azure Active Directory -> App registrations -> New registration
+    *   **Name**: (例如: IDCsmart Login)
+    *   **Supported account types**: 选择 "Accounts in any organizational directory and personal Microsoft accounts"
+    *   **Redirect URI**: 选择 "Web" 并填入 `yourdomain.com/oauth/url/插件名称` (请确认此回调路径)
+2.  **配置API权限**:
+    *   在应用页面 -> API permissions -> Add a permission -> Microsoft Graph -> Delegated permissions
+    *   添加 `openid`, `email`, `profile`, `User.Read` 权限
+    *   点击 "Grant admin consent" (如果需要)
+3.  **创建客户端密钥**:
+    *   在应用页面 -> Certificates & secrets -> New client secret
+    *   记录生成的 Secret 值 (只显示一次)
+4.  **获取 Application (client) ID** (在应用概览页面)。
+5.  **后台配置**: 在 IDCsmart 后台对应的插件配置中填入 Client ID 和 Client Secret。
+
 ### Atlassian 配置
 
 1.  **创建OAuth应用**:
@@ -224,4 +243,4 @@ MetaMask 登录不依赖传统的 OAuth Client ID/Secret，而是基于数字签
 ## 📞 支持与联系
 
 *   **Bug 报告 / 功能请求**: 请通过 GitHub Issues 提交。
-*   **联系我们**: [Maishan Inc](support@maishanzero.com)  MaishanInc和杭州零迈科技 不存在与 重庆顺戴网络科技有限公司[IDCsmart开发商] 联系 
+*   **联系我们**: [Maishan Inc](support@maishanzero.com)  MaishanInc和杭州零迈科技 不存在与 重庆顺戴网络科技有限公司[IDCsmart开发商] 联系
